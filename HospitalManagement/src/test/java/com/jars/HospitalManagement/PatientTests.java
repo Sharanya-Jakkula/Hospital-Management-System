@@ -42,11 +42,18 @@ public class PatientTests {
 //    for(Patient patient:patientList){
 //        System.out.println(patient);
 //    }
-        List<Object[]> bloodGroupList=patientRepository.countEachBloodGroupType();
-        for(Object[] objects:bloodGroupList){
-            System.out.println(objects[0]+" "+objects[1]);
-        }
+//        List<Object[]> bloodGroupList=patientRepository.countEachBloodGroupType();
+//        for(Object[] objects:bloodGroupList){
+//            System.out.println(objects[0]+" "+objects[1]);
+//        }
+//
+//        List<Patient> list=patientRepository.findAllPatients();
+//        for(Patient patient:list){
+//            System.out.println(patient);
+//        }
 
+        int rowsUpdated=patientRepository.updateNameWithId("Anil sharma",51L);
+        System.out.println(rowsUpdated);
 
     }
 }
