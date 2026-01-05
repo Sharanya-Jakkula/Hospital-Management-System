@@ -4,6 +4,8 @@ import com.jars.HospitalManagement.entity.Patient;
 import com.jars.HospitalManagement.entity.dto.BloodGroupCountResponseEntity;
 import com.jars.HospitalManagement.entity.type.BloodGroupType;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -39,7 +41,7 @@ public interface PatientRepository extends JpaRepository<Patient,Long> {
 
     //Native Query
     @Query(value = "select * from patient",nativeQuery = true)
-    List<Patient> findAllPatients();
+    Page<Patient> findAllPatients(Pageable pageable);
 
     @Modifying
     @Transactional
