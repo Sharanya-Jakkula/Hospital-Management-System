@@ -1,6 +1,7 @@
 package com.jars.HospitalManagement.repository;
 
 import com.jars.HospitalManagement.entity.Patient;
+import com.jars.HospitalManagement.entity.dto.BloodGroupCountResponseEntity;
 import com.jars.HospitalManagement.entity.type.BloodGroupType;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -32,8 +33,9 @@ public interface PatientRepository extends JpaRepository<Patient,Long> {
     @Query("SELECT p FROM Patient p WHERE p.birthDate>:birthDate")
     List<Patient> findByBornAfterDate(@Param("birthDate") LocalDate birthDate);
 
-    @Query("select p.bloodGroup,count(p) from Patient p group by p.bloodGroup")
-    List<Object[]> countEachBloodGroupType();
+    @Query("select new com.jars.HospitalManagement.entity.dto.BloodGroupCountResponseEntity(p.bloodGroup,count(p)) from Patient p group by p.bloodGroup")
+//    List<Object[]> countEachBloodGroupType();
+    List<BloodGroupCountResponseEntity> countEachBloodGroupType();
 
     //Native Query
     @Query(value = "select * from patient",nativeQuery = true)

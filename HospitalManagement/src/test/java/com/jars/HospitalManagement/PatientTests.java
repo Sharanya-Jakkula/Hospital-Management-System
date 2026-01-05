@@ -1,6 +1,7 @@
 package com.jars.HospitalManagement;
 
 import com.jars.HospitalManagement.entity.Patient;
+import com.jars.HospitalManagement.entity.dto.BloodGroupCountResponseEntity;
 import com.jars.HospitalManagement.entity.type.BloodGroupType;
 import com.jars.HospitalManagement.repository.PatientRepository;
 import com.jars.HospitalManagement.service.PatientService;
@@ -52,8 +53,13 @@ public class PatientTests {
 //            System.out.println(patient);
 //        }
 
-        int rowsUpdated=patientRepository.updateNameWithId("Anil sharma",51L);
-        System.out.println(rowsUpdated);
+//        int rowsUpdated=patientRepository.updateNameWithId("Anil sharma",51L);
+//        System.out.println(rowsUpdated);
+
+        List<BloodGroupCountResponseEntity> bloodGroupList=patientRepository.countEachBloodGroupType();
+        for(BloodGroupCountResponseEntity bloodGroupCountResponseEntity:bloodGroupList){
+            System.out.println(bloodGroupCountResponseEntity);
+        }
 
     }
 }
