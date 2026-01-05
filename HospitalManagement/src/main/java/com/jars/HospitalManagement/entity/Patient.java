@@ -1,5 +1,6 @@
 package com.jars.HospitalManagement.entity;
 
+import com.jars.HospitalManagement.entity.type.BloodGroupType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @ToString
 @Getter
 @Setter
-@Table(name = "patient_tbl",uniqueConstraints = {
+@Table(name = "patient",uniqueConstraints = {
 //        @UniqueConstraint(name = "unique_patient_email",columnNames = {"email"}),
         @UniqueConstraint(name = "unique_patient_name_birthdate",columnNames = {"name","birthDate"})
         },
@@ -26,7 +27,7 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "patient_name",nullable = false,length = 40)
+    @Column(nullable = false,length = 40)
     private String name;
 
     @ToString.Exclude
@@ -41,6 +42,8 @@ public class Patient {
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
+    @Enumerated(EnumType.STRING)
+    private BloodGroupType BloodGroup;
 
 
 }
