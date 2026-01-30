@@ -25,10 +25,12 @@ public class Appointment {
     private String reason;
 
     @ManyToOne //many appointments to one patient
+    @ToString.Exclude
     @JoinColumn(name = "patient_id",nullable = false) //patient is required and not nullable
     private Patient patient;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     @JoinColumn(nullable = false)
     private Doctor doctor;
 

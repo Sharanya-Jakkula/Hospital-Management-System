@@ -17,3 +17,11 @@ VALUES
 ('Dr. Ravi Teja', 'Orthopedic', 'ravi.teja@hospital.com'),
 ('Dr. Neha Verma', 'Pediatrician', 'neha.verma@hospital.com'),
 ('Dr. Suresh Rao', 'Neurologist', 'suresh.rao@hospital.com');
+
+INSERT INTO appointment (appointment_time, reason, patient_id, doctor_id)
+VALUES
+('2026-02-01 10:30:00', 'Regular heart checkup', 1, 1),
+('2026-02-01 11:15:00', 'Skin allergy consultation', 2, 2),
+('2026-02-02 09:00:00', 'Knee pain evaluation', 3, 3),
+('2026-02-02 10:45:00', 'Child fever and cold', 4, 4),
+('2026-02-03 12:00:00', 'Migraine and headache issues', 5, 5);
