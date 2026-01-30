@@ -25,3 +25,4 @@ VALUES
 ('2026-02-02 09:00:00', 'Knee pain evaluation', 3, 3),
 ('2026-02-02 10:45:00', 'Child fever and cold', 4, 4),
 ('2026-02-03 12:00:00', 'Migraine and headache issues', 5, 5);
+
