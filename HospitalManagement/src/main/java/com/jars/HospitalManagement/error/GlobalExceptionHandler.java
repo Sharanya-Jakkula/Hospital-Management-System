@@ -19,11 +19,11 @@ public class GlobalExceptionHandler {
     }
 
 
-    @ExceptionHandler(AuthenticationException.class)
-    public ResponseEntity<ApiError> handleAuthenticationException(AuthenticationException ex) {
-        ApiError apiError = new ApiError("Authentication failed: " + ex.getMessage(), HttpStatus.UNAUTHORIZED);
-        return new ResponseEntity<>(apiError, HttpStatus.UNAUTHORIZED);
-    }
+//    @ExceptionHandler(AuthenticationException.class)
+//    public ResponseEntity<ApiError> handleAuthenticationException(AuthenticationException ex) {
+//        ApiError apiError = new ApiError("Authentication failed: " + ex.getMessage(), HttpStatus.UNAUTHORIZED);
+//        return new ResponseEntity<>(apiError, HttpStatus.UNAUTHORIZED);
+//    }
 
     @ExceptionHandler(JwtException.class)
     public ResponseEntity<ApiError> handleJwtException(JwtException ex) {
@@ -31,11 +31,11 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(apiError, HttpStatus.UNAUTHORIZED);
     }
 
-    @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<ApiError> handleAccessDeniedException(AccessDeniedException ex) {
-        ApiError apiError = new ApiError("Access denied: Insufficient permissions", HttpStatus.FORBIDDEN);
-        return new ResponseEntity<>(apiError, HttpStatus.FORBIDDEN);
-    }
+//    @ExceptionHandler(AccessDeniedException.class)
+//    public ResponseEntity<ApiError> handleAccessDeniedException(AccessDeniedException ex) {
+//        ApiError apiError = new ApiError("Access denied: Insufficient permissions", HttpStatus.FORBIDDEN);
+//        return new ResponseEntity<>(apiError, HttpStatus.FORBIDDEN);
+//    }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiError> handleGenericException(Exception ex) {
