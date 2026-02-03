@@ -1,6 +1,5 @@
 package com.jars.HospitalManagement.entity;
 
-import com.jars.HospitalManagement.entity.type.AuthProviderType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,10 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "app_user",indexes =
-        {
-                @Index(name="idx_provider_id_provider_Type",columnList = "providerId,providerType")}
-)
+@Table(name = "app_user")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,11 +24,6 @@ public class User implements UserDetails {
     private String username;
 
     private String password;
-
-    private String providerId;
-
-    @Enumerated(EnumType.STRING)
-    private AuthProviderType providerType;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
