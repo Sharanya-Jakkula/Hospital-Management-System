@@ -1,9 +1,8 @@
-package com.jars.HospitalManagement.service;
+package com.jars.HospitalManagement.security;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jars.HospitalManagement.dto.LoginResponseDto;
-import com.jars.HospitalManagement.security.AuthService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
